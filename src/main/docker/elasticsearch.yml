@@ -1,0 +1,10 @@
+version: '2'
+services:
+    dnbihipster-elasticsearch:
+        container_name: dnbihipster-elasticsearch
+        image: elasticsearch:1.7.5
+        # volumes:
+        #     - ~/volumes/jhipster/dnbihipster/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300

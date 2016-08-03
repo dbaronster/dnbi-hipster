@@ -1,0 +1,8 @@
+version: '2'
+services:
+    dnbihipster-sonar:
+        container_name: dnbihipster-sonar
+        image: sonarqube:5.6-alpine
+        ports:
+            - 9000:9000
+            - 9092:9092

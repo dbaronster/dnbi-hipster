@@ -1,0 +1,22 @@
+version: '2'
+services:
+    dnbihipster-app:
+        image: dnbihipster
+        external_links:
+            - dnbihipster-postgresql:postgresql
+            - dnbihipster-elasticsearch:elasticsearch
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/dnbihipster
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
+        ports:
+            - 8080:8080
+    dnbihipster-postgresql:
+        extends:
+            file: postgresql.yml
+            service: dnbihipster-postgresql
+    dnbihipster-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: dnbihipster-elasticsearch

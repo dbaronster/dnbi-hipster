@@ -1,0 +1,12 @@
+version: '2'
+services:
+    dnbihipster-postgresql:
+        container_name: dnbihipster-postgresql
+        image: postgres:9.5.3
+        # volumes:
+        #     - ~/volumes/jhipster/dnbihipster/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=dnbihipster
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
